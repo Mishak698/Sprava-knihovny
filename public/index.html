@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knihovna</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Správa knihovny</h1>
+
+    <div class="section">
+        <h2>Přidat autora</h2>
+        <form id="addAuthorForm">
+            <input type="text" id="firstName" placeholder="Jméno" required>
+            <input type="text" id="lastName" placeholder="Příjmení" required>
+            <button type="submit">Přidat autora</button>
+        </form>
+    </div>
+
+    <div class="section">
+        <h2>Přidat žánr</h2>
+        <form id="addGenreForm">
+            <input type="text" id="genreName" placeholder="Název žánru" required>
+            <button type="submit">Přidat žánr</button>
+        </form>
+    </div>
+
+    <div class="section">
+        <h2>Přidat knihu</h2>
+        <form id="addBookForm">
+            <input type="text" id="bookTitle" placeholder="Název knihy" required>
+            <input type="date" id="releaseDate" required>
+            <select id="authorSelect" required>
+                <option value="">Vyberte autora</option>
+            </select>
+            <select id="genreSelect" required>
+                <option value="">Vyberte žánr</option>
+            </select>
+            <button type="submit">Přidat knihu</button>
+        </form>
+    </div>
+
+    <div class="section">
+        <h2>Seznam autorů</h2>
+        <form id="filterAuthorsForm">
+            <input type="text" id="filterFirstName" placeholder="Filtrovat podle jména">
+            <input type="text" id="filterLastName" placeholder="Filtrovat podle příjmení">
+            <button type="submit">Filtrovat</button>
+        </form>
+        <table id="authorsTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Jméno</th>
+                    <th>Příjmení</th>
+                    <th>Akce</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Seznam knih</h2>
+        <form id="filterBooksForm">
+            <input type="text" id="filterTitle" placeholder="Filtrovat podle názvu">
+            <input type="date" id="filterReleaseDate" placeholder="Filtrovat podle data vydání">
+            <input type="text" id="filterAuthor" placeholder="Filtrovat podle autora">
+            <input type="text" id="filterGenre" placeholder="Filtrovat podle žánru">
+            <button type="submit">Filtrovat</button>
+        </form>
+        <table id="booksTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Název</th>
+                    <th>Datum vydání</th>
+                    <th>Autor</th>
+                    <th>Žánr</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div id="authorDetailSection" class="section author-detail" style="display: none;">
+        <h2>Detail autora</h2>
+        <div id="authorDetail"></div>
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
